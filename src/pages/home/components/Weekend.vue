@@ -19,8 +19,8 @@
 export default {
   name: 'HomeWeekend',
   data () {
-    return{
-      recommendList:[{
+    return {
+      recommendList: [{
         id: '001',
         imgUrl: 'http://img1.qunarzz.com/sight/source/1505/8a/d412db9fcd44dd.jpg_r_640x214_86f303a2.jpg',
         title: '苏州必游TOP10',
@@ -31,8 +31,8 @@ export default {
         imgUrl: 'http://img1.qunarzz.com/sight/source/1505/70/b2f8425ce486ed.jpg_r_640x214_5db9de57.jpg',
         title: '细嗅历史的气息',
         desc: '阅尽沧桑，不变的是恬静，待君细细品味'
-      }
-      ,{
+      },
+      {
         id: '003',
         imgUrl: 'http://img1.qunarzz.com/sight/source/1507/ab/1c456b9cbffc31.jpg_r_640x214_1c2552de.jpg',
         title: '寻魅力江南古镇',
@@ -67,7 +67,7 @@ export default {
     height:0
     padding-bottom:33.9%
     .item-img
-       width:100%
+      width:100%
   .item-info  
     padding: .35rem
     .item-title
@@ -77,5 +77,5 @@ export default {
     .item-desc
       line-height: .4rem
       color:#ccc
-      ellipsis()  
+      ellipsis()
 </style>
