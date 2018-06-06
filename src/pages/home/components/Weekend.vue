@@ -68,7 +68,7 @@ export default {
     padding-bottom:33.9%
     .item-img
       width:100%
-  .item-info  
+  .item-info
     padding: .35rem
     .item-title
       line-height: .54rem
