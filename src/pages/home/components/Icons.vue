@@ -95,10 +95,7 @@ export default {
   .icons >>> .swiper-container
     height:0
     padding-bottom:50%
-<<<<<<< HEAD
-=======
     margin-top: .1rem
->>>>>>> index-recommend
   .icon
       position: relative
       overflow: hidden
