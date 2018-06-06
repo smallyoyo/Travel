@@ -18,8 +18,8 @@
 export default {
   name: 'HomeRecommend',
   data () {
-    return{
-      recommendList:[{
+    return {
+      recommendList: [{
         id: '001',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/85/85aa0c000578a01e90.water.jpg_200x200_0ccb4aa8.jpg',
         title: '细嗅历史的气息',
@@ -36,33 +36,32 @@ export default {
         imgUrl: 'http://img1.qunarzz.com/sight/p0/201405/14/3dfad2bcd30c40e91a15f8b7296d86a6.jpg_200x200_265db173.jpg',
         title: '细嗅历史的气息',
         desc: '阅尽沧桑，不变的是恬静，待君细细品味'
-      }
-      ,
-       {
+      },
+      {
         id: '004',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1507/27/6640b07ce9a3dd7d9e37743ff58c1c3f.water.jpg_200x200_d7cd9982.jpg',
         title: '古典园林逛个够',
         desc: '如果是第一次来苏州，园林是一定要逛的'
       },
-       {
+      {
         id: '005',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/cd/cde718c195cc7cb0.water.jpg_200x200_30d44a00.jpg',
         title: '山清水秀之地',
         desc: '钟情于山水之间，别有一番雅致'
       },
-       {
+      {
         id: '006',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/cd/cde718c195cc7cb0.water.jpg_200x200_30d44a00.jpg',
         title: '细嗅历史的气息',
         desc: '阅尽沧桑，不变的是恬静，待君细细品味'
       },
-       {
+      {
         id: '007',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1802/80/80c0ccee0d2debf9a3.img.jpg_200x200_6ca992e6.jpg',
         title: '细嗅历史的气息',
         desc: '阅尽沧桑，不变的是恬静，待君细细品味'
       },
-       {
+      {
         id: '008',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/201405/30/bcc9329d8af6f5cdddff715ed11a90fd.jpg_200x200_e5a812cd.jpg',
         title: '细嗅历史的气息',
