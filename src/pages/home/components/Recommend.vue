@@ -88,7 +88,7 @@ export default {
       height:2rem
       padding: .2rem
     .item-info
-      flex:1  
+      flex:1
       padding: .2rem
       min-width:0
       .item-title
@@ -104,7 +104,6 @@ export default {
         background: #ff9300
         padding: 0 .1rem
         border-radius: .06rem
-        margin-top: .2rem 
+        margin-top: .2rem
         color:#fff
-
 </style>
