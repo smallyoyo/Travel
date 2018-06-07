@@ -1,12 +1,10 @@
 <template>
-  
+  <div></div>
 </template>
 <script>
-export default {
+export default{
   name: 'City'
 }
-  
 </script>
 <style lang="stylus" scoped>
-  
 </style>
