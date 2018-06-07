@@ -42,6 +42,7 @@ export default {
       width: 1.24rem
       float:right
       text-align:center
+      color:white
       .arrow-icon
         font-size: .24rem
         margin-left:-.04rem
