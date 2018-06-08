@@ -33,6 +33,11 @@ export default {
     margin-top: .2rem
     line-height: .8rem
     background:#eee
+    /**
+     * text-indent
+     * 首行缩进
+     * @type {[css]}
+     */
     text-indent: .2rem
   .item
     overflow:hidden
