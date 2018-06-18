@@ -13,33 +13,76 @@
         {{comment}}
       </div>
       <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/5c/5b87ef806c352402.jpg_228x168_4c068a2a.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://img1.qunarzz.com/sight/p0/1603/85/85aa0c000578a01e90.water.jpg_600x330_6dddcf68.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
         </div>
       </div>
-      <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
-        </div>
+    </div>
+        <div class="comment">
+      <div class="comment-header">
+        <div class="star iconfont">&#xe6b0;&#xe6b0;&#xe6b0;&#xe6b0;&#xe6b0;</div>
+        <div class="time">j*8  2018-06-04</div>
+      </div>
+      <div class="comment-content">
+        {{comment}}
       </div>
       <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
         </div>
-      </div>
-      <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/5c/5b87ef806c352402.jpg_228x168_4c068a2a.jpg"/>
+          </div>
         </div>
-      </div>
-      <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://img1.qunarzz.com/sight/p0/1603/85/85aa0c000578a01e90.water.jpg_600x330_6dddcf68.jpg"/>
+          </div>
         </div>
-      </div>
-      <div class="comment-imgs">
-        <div class="comment-img">
-          <img src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg">
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
+        </div>
+        <div class="comment-imgout">
+          <div class="comment-imginner">
+            <img class="comment-img" src="https://imgs.qunarzz.com/piao/fusion/1806/c5/745c1d3b4136fe02.jpg_228x168_98ba7a63.jpg"/>
+          </div>
         </div>
       </div>
     </div>
@@ -79,15 +122,19 @@ export default{
     font-size: .26rem
     color: #616161
   .comment-imgs
-    width: 33.3%
-    float: left
-    height: 0
+    margin: .02rem 0 .02rem 0
     overflow: hidden
-    padding-bottom: 23.07%
-    margin-top: .08rem
-    .comment-img
-      margin-left: .07rem
-      margin-right: .07rem
-    .comment-img img
-      width: 100%
+    .comment-imgout
+      float: left
+      width: 33.3%
+      margin-bottom: .1rem  
+      .comment-imginner
+        margin-left: .07rem
+        margin-right: .07rem
+        padding-bottom: 70%
+        height: 0
+        .comment-img
+          width: 100%
+          background: url(https://s.qunarzz.com/piao_topic/image/common/default/140x140.png)
+          background-size: contain
 </style>
