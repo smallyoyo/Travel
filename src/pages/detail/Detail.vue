@@ -4,7 +4,7 @@
     <detail-header></detail-header>
     <div class="content">
       <detail-list :list="list"></detail-list>
-      <detail-comment></detail-comment>
+      <detail-comment :commentList="commentList"></detail-comment>
     </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ export default{
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
-      list: []
+      list: [],
+      commentList: null
     }
   },
   methods: {
@@ -47,6 +48,8 @@ export default{
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
         this.list = data.categoryList
+        this.commentList = data.commentList
+        console.log(this.commentList)
       }
     }
   },
