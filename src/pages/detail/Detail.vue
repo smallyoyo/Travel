@@ -44,12 +44,10 @@ export default{
       if (res.ret && res.data) {
         const data = res.data
         this.sightName = data.sightName
-        console.log(this.sightName)
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
         this.list = data.categoryList
         this.commentList = data.commentList
-        console.log(this.commentList)
       }
     }
   },
