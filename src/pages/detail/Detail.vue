@@ -5,6 +5,7 @@
     <div class="content">
       <detail-list :list="list"></detail-list>
       <detail-comment :commentList="commentList"></detail-comment>
+      <detail-recommend :spotsList="spotsList"></detail-recommend>
     </div>
   </div>
 </template>
@@ -13,6 +14,7 @@ import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
 import DetailComment from './components/Comment'
+import DetailRecommend from './components/Recommend'
 import axios from 'axios'
 export default{
   name: 'Detail',
@@ -20,7 +22,8 @@ export default{
     DetailBanner,
     DetailHeader,
     DetailList,
-    DetailComment
+    DetailComment,
+    DetailRecommend
   },
   data () {
     return {
@@ -28,7 +31,8 @@ export default{
       bannerImg: '',
       gallaryImgs: [],
       list: [],
-      commentList: null
+      commentList: [],
+      spotsList: []
     }
   },
   methods: {
@@ -48,6 +52,7 @@ export default{
         this.gallaryImgs = data.gallaryImgs
         this.list = data.categoryList
         this.commentList = data.commentList
+        this.spotsList = data.spotsList
       }
     }
   },
