@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="detail">
     <detail-banner :sightName="sightName" :bannerImg="bannerImg" :bannerImgs="gallaryImgs"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
@@ -7,6 +7,7 @@
       <detail-comment :commentList="commentList"></detail-comment>
       <detail-recommend :spotsList="spotsList"></detail-recommend>
     </div>
+    <item-detail></item-detail>
   </div>
 </template>
 <script>
@@ -15,6 +16,7 @@ import DetailHeader from './components/Header'
 import DetailList from './components/List'
 import DetailComment from './components/Comment'
 import DetailRecommend from './components/Recommend'
+import ItemDetail from './components/ItemDetail'
 import axios from 'axios'
 export default{
   name: 'Detail',
@@ -23,7 +25,8 @@ export default{
     DetailHeader,
     DetailList,
     DetailComment,
-    DetailRecommend
+    DetailRecommend,
+    ItemDetail
   },
   data () {
     return {
@@ -62,6 +65,8 @@ export default{
 }
 </script>
 <style lang="stylus" scoped>
+  .detail
+    position: relative
   .content
     height: 50rem
 </style>
