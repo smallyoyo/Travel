@@ -5,76 +5,45 @@
         <span class="item-title-icon"></span>
         {{item.title}}
       </div>
-      <div class="item-content border-bottom" v-for="(contentItem,index) of item.contentList" :key="index" @click="showDetailClick(index)">
-        <div class="content-title">
+      <div class="item-content border-bottom" v-for="(contentItem,index) of item.contentList" :key="index" >
+        <div class="content" @click="showDetailClick(index)">
+          <div class="content-title">
           {{contentItem.content}}
-        </div>
-        <div class="item-price">
-          ¥
-          <em class="price">{{contentItem.price}}</em>
-          <span class="qi">起</span>
-          <span class="iconfont down">&#xe62d;</span>
-        </div>
-      </div>
-      <div class="item-detail" v-show="showDetail">
-        <div class="detail border-bottom" @click="handlerShow">
-          <div class="detail-content">
-            <div class="detail-title">【纯玩团】拙政园+虎丘+寒山寺+姑苏水上游+山塘街纯玩一日游</div>
-            <div class="detail-day">
-              <span>
-                <img class="detail-day-img" src="https://img1.qunarzz.com/piao/fusion/1804/25/792e9929973a9902.png" /> 可定明日
-              </span>
-            </div>
-            <div class="detail-condition">
-              <span class="return">随时退</span>
-              <span class="return">
-                <img class="return-img" src="https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png"/>
-                自营
-              </span>
-            </div>
           </div>
-          <div class="detail-price">
-            <div class="item-price">
-              ¥
-              <em class="price">5.00</em>
-            </div>
-            <div class="detail-btn">
-              <em>预订</em>
-            </div>
-          </div>
+          <div class="item-price">
+            ¥
+            <em class="price">{{contentItem.price}}</em>
+            <span class="qi">起</span>
+            <span class="iconfont down">&#xe62d;</span>
+          </div>     
         </div>
-        <div class="detail border-bottom">
-          <div class="detail-content">
-            <div class="detail-title">【纯玩团】拙政园+虎丘+寒山寺+姑苏水上游+山塘街纯玩一日游</div>
-            <div class="detail-day">
-              <span>
-                <img class="detail-day-img" src="https://img1.qunarzz.com/piao/fusion/1804/25/792e9929973a9902.png" /> 可定明日
-              </span>
+        <div class="item-detail" v-for="detail of contentItem.detail" :key="detail.id" v-show="showDetail">
+          <div class="detail border-bottom" @click="handlerShow">
+            <div class="detail-content">
+              <div class="detail-title">{{detail.title}}</div>
+              <div class="detail-day">
+                <span>
+                  <img class="detail-day-img" src="https://img1.qunarzz.com/piao/fusion/1804/25/792e9929973a9902.png" />
+                  <span>{{detail.time}}</span>
+                </span>
+              </div>
+              <div class="detail-condition">
+                <span class="return" v-for="(condition,index) of detail.condition" :key="index" v-html="condition"></span>
+              </div>
             </div>
-            <div class="detail-condition">
-              <span class="return">随时退</span>
-              <span class="return">
-                <img class="return-img" src="https://img1.qunarzz.com/piao/fusion/1804/b0/c3cf2897c74ecc02.png"/>
-                自营
-              </span>
-            </div>
-            <div class="show-detail">
-              <span>去哪儿直营</span> |
-              <span>购买须知</span>
-              <span class="iconfont jianright">&#xe616;</span>
-            </div>
-          </div>
-          <div class="detail-price">
-            <div class="item-price">
-              ¥
-              <em class="price">5.00</em>
-            </div>
-            <div class="detail-btn">
-              <em>预订</em>
+            <div class="detail-price">
+              <div class="item-price">
+                ¥
+                <em class="price">{{detail.price}}</em>
+              </div>
+              <div class="detail-btn">
+                <em>预订</em>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div v-if="item.children" class="item-children">
         <detail-list :list="item.children"></detail-list>
       </div>
@@ -88,17 +57,17 @@ export default{
     list: Array
   },
   data () {
-    return{
+    return {
       showDetail: false
     }
   },
   methods: {
     showDetailClick (index) {
-      console.log(index)
       this.showDetail = !this.showDetail
     },
     handlerShow () {
-      
+      console.log('list success')
+      this.$emit('detailchange')
     }
   }
 }
@@ -121,13 +90,15 @@ export default{
   .item-children
     padding: 0 .2rem
   .item-content
+    overflow: hidden
+  .content
+    padding: 0 .2rem
     line-height: .82rem
     font-size: .30rem
-    padding: 0 .2rem
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: space-between
+  .content-title
+    float: left
+    overflow: hidden
+    width: 80%
   .item-price
       color: #ff9800
       font-size: .24rem
@@ -138,9 +109,10 @@ export default{
         color: #9e9e9e
       .down
         color: #9e9e9e
-        font-size: .30rem  
+        font-size: .30rem
   .item-detail
     background: #f5f5f5
+    padding: 0 0
     .detail
       display: flex
       flex-direction: row
@@ -175,8 +147,7 @@ export default{
           color: #00afc7
           border: 1px solid #a5e4ec
           font-size: .2rem
-          .return-img
-            width: .25rem
+          margin: 0 .03rem
       .show-detail,.jianright
         font-size: .24rem
 </style>

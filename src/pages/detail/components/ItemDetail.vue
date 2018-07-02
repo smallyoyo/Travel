@@ -1,5 +1,5 @@
 <template>
-  <div class="bg" v-if="showDetail">
+  <div class="bg">
     <div class="out">
       <div class="item border-bottom">
         <h2 class="item-title">大连圣亚海洋世界(AAAA景区)</h2>
@@ -136,17 +136,16 @@
             咨询
           </div>
         </div>
-        <div class="now">立即预定</div>  
+        <div class="now">立即预定</div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default{
-  name: "ItemDetail",
+  name: 'ItemDetail',
   data () {
     return {
-      showDetail: true
     }
   },
   methods: {

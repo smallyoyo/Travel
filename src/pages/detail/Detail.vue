@@ -3,11 +3,11 @@
     <detail-banner :sightName="sightName" :bannerImg="bannerImg" :bannerImgs="gallaryImgs"></detail-banner>
     <detail-header></detail-header>
     <div class="content">
-      <detail-list :list="list"></detail-list>
+      <detail-list :list="list" @detailchange="handlerDetailShow"></detail-list>
       <detail-comment :commentList="commentList"></detail-comment>
       <detail-recommend :spotsList="spotsList"></detail-recommend>
     </div>
-    <item-detail></item-detail>
+    <item-detail v-show="detailShow"></item-detail>
   </div>
 </template>
 <script>
@@ -35,7 +35,8 @@ export default{
       gallaryImgs: [],
       list: [],
       commentList: [],
-      spotsList: []
+      spotsList: [],
+      detailShow: false
     }
   },
   methods: {
@@ -57,6 +58,8 @@ export default{
         this.commentList = data.commentList
         this.spotsList = data.spotsList
       }
+    },
+    handlerDetailShow () {
     }
   },
   mounted () {
