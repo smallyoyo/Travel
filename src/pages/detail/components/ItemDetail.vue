@@ -2,7 +2,7 @@
   <div class="bg">
     <div class="out">
       <div class="item border-bottom">
-        <h2 class="item-title">大连圣亚海洋世界(AAAA景区)</h2>
+        <h2 class="item-title">{{destine.tickeName}}</h2>
         <div class="item-close iconfont" @click="handlerClose">&#xe613;</div>
       </div>
       <div class="detail border-bottom">
@@ -15,7 +15,7 @@
             <div class="destine-time">预定时间：</div>
             <div class="destine-out">
               <div class="destine-mp">
-                <span class="destine-content">17:30前随买随用</span>
+                <span class="destine-content">{{destine.destineTime}}</span>
               </div>
               <p class="destine-desc">需要在游玩当天的17:30前预订</p>
             </div>
@@ -23,7 +23,7 @@
           <div class="destine">
             <div class="destine-time">有 效 期：</div>
             <div class="destine-out">
-              <p class="destine-desc">游玩日期当天有效</p>
+              <p class="destine-desc">{{destine.validityPeriod}}</p>
             </div>
           </div>
         </div>
@@ -35,10 +35,7 @@
           <div class="destine">
             <div class="destine-time">景区开发时间：</div>
             <div class="destine-out">
-              <p class="destine-desc">
-                周一～周五：08:30～16:30开放；<br/>
-                周一～周五：08:30～16:30开放；
-              </p>
+              <p class="destine-desc" v-html="destine.openTiem"></p>
             </div>
           </div>
         </div>
@@ -50,39 +47,7 @@
           <div class="destine">
             <div class="destine-out">
               <p class="destine-desc line">
-                费用包含
-                <br>
-                【散客自驾】金海湖风景区成人门票+快艇票，节假日通用！
-                <br>
-                使用方法
-                <br>
-                入园方式：凭【大方向票务】短信电子码验证入园
-                <br>
-                入园时间：8:30-16:00 以景区为主
-                <br>
-                入园地址：金海湖景区西门游客中心
-                <br>
-                退款说明
-                <br>
-                随时退，未消费(包含过期)的旅游商品支持随时申请退款
-                <br>
-                其他说明
-                <br>
-                儿童价：身高1.2米以下免费
-                <br>
-                老年票：老年证半价，北京市老年优待卡免票
-                <br>
-                其他（如军官证、教师优惠等）军官证、学生证半价；记者证、离休证、残疾证免票
-                <br>
-                地址路线
-                <br>
-                公交路线
-                <br>
-                东直门乘918路至平谷可达。
-                <br>
-                自驾路线
-                <br>
-                走京平高速，到夏各庄路口南太务收费站左转即可到达金海湖。
+                夏各庄路口南太务收费站左转即可到达金海湖。
               </p>
             </div>
           </div>
@@ -98,15 +63,13 @@
               <div class="destine-mp">
                 <span class="destine-content">随时退</span>
               </div>
-              <p class="destine-desc">90天内支持随时退款，经核实如未取票，可免费取消
-              </p>
+              <p class="destine-desc" v-html="destine.explanation"></p>
             </div>
           </div>
           <div class="destine">
             <div class="destine-time">极速处理：</div>
             <div class="destine-out">
-              <p class="destine-desc">去哪儿网承诺，提交申请后一个工作日内完成退款申请的审核
-              </p>
+              <p class="destine-desc">{{destine.rapidProcessing}}</p>
             </div>
           </div>
         </div>
@@ -117,11 +80,7 @@
           </div>
           <div class="destine">
             <div class="destine-out">
-              <p class="destine-desc line">
-                金海湖风景区成人门票+快艇票<br/>
-                6月3日10点以后开始验票<br/>
-                <br/>
-              </p>
+              <p class="destine-desc line" v-html="destine.expenseDescription"></p>
             </div>
           </div>
         </div>
@@ -144,13 +103,16 @@
 <script>
 export default{
   name: 'ItemDetail',
+  props: {
+    destine: Object
+  },
   data () {
     return {
     }
   },
   methods: {
     handlerClose () {
-      this.showDetail = !this.showDetail
+      this.$emit('detailClose')
     }
   }
 }

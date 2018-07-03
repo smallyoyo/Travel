@@ -7,7 +7,7 @@
       <detail-comment :commentList="commentList"></detail-comment>
       <detail-recommend :spotsList="spotsList"></detail-recommend>
     </div>
-    <item-detail v-show="detailShow"></item-detail>
+    <item-detail v-show="detailShow" :destine="destine" @detailClose="detalClose"></item-detail>
   </div>
 </template>
 <script>
@@ -36,7 +36,8 @@ export default{
       list: [],
       commentList: [],
       spotsList: [],
-      detailShow: false
+      detailShow: false,
+      destine: {}
     }
   },
   methods: {
@@ -59,7 +60,25 @@ export default{
         this.spotsList = data.spotsList
       }
     },
-    handlerDetailShow () {
+    handlerDetailShow (id) {
+      if (!this.detailShow) {
+        axios.get('/api/destine.json', {
+          params: {
+            id: id
+          }
+        }).then(this.handleGetDestineSuccess)
+      }
+      this.detailShow = !this.detailShow
+    },
+    handleGetDestineSuccess (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const destineData = res.data
+        this.destine = destineData
+      }
+    },
+    detalClose () {
+      this.detailShow = false
     }
   },
   mounted () {

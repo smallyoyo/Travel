@@ -15,10 +15,10 @@
             <em class="price">{{contentItem.price}}</em>
             <span class="qi">起</span>
             <span class="iconfont down">&#xe62d;</span>
-          </div>     
+          </div>
         </div>
         <div class="item-detail" v-for="detail of contentItem.detail" :key="detail.id" v-show="showDetail">
-          <div class="detail border-bottom" @click="handlerShow">
+          <div class="detail border-bottom" @click="handlerShow(detail.id)">
             <div class="detail-content">
               <div class="detail-title">{{detail.title}}</div>
               <div class="detail-day">
@@ -65,9 +65,8 @@ export default{
     showDetailClick (index) {
       this.showDetail = !this.showDetail
     },
-    handlerShow () {
-      console.log('list success')
-      this.$emit('detailchange')
+    handlerShow (id) {
+      this.$emit('detailchange', id)
     }
   }
 }
