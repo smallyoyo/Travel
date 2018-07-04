@@ -7,7 +7,7 @@
       <detail-comment :commentList="commentList"></detail-comment>
       <detail-recommend :spotsList="spotsList"></detail-recommend>
     </div>
-    <item-detail v-show="detailShow" :destine="destine" @detailClose="detalClose"></item-detail>
+    <item-detail v-show="detailShow" :detailShow="detailShow" :destine="destine" @detailClose="detalClose"></item-detail>
   </div>
 </template>
 <script>

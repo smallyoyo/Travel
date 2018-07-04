@@ -1,110 +1,113 @@
 <template>
   <div class="bg">
-    <div class="out">
-      <div class="item border-bottom">
-        <h2 class="item-title">{{destine.tickeName}}</h2>
-        <div class="item-close iconfont" @click="handlerClose">&#xe613;</div>
-      </div>
-      <div class="detail border-bottom">
-        <div class="item-detail">
-          <div class="item-header">
-            <span class="title-icon">|</span>
-            <span>预计说明</span>
-          </div>
-          <div class="destine">
-            <div class="destine-time">预定时间：</div>
-            <div class="destine-out">
-              <div class="destine-mp">
-                <span class="destine-content">{{destine.destineTime}}</span>
+    <transition>
+      <div class="out" v-show="detailShow" ref="out">
+        <div class="item border-bottom">
+          <h2 class="item-title">{{destine.tickeName}}</h2>
+          <div class="item-close iconfont" @click="handlerClose">&#xe613;</div>
+        </div>
+        <div class="detail border-bottom">
+          <div class="item-detail">
+            <div class="item-header">
+              <span class="title-icon">|</span>
+              <span>预计说明</span>
+            </div>
+            <div class="destine">
+              <div class="destine-time">预定时间：</div>
+              <div class="destine-out">
+                <div class="destine-mp">
+                  <span class="destine-content">{{destine.destineTime}}</span>
+                </div>
+                <p class="destine-desc">需要在游玩当天的17:30前预订</p>
               </div>
-              <p class="destine-desc">需要在游玩当天的17:30前预订</p>
             </div>
-          </div>
-          <div class="destine">
-            <div class="destine-time">有 效 期：</div>
-            <div class="destine-out">
-              <p class="destine-desc">{{destine.validityPeriod}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="item-detail">
-          <div class="item-header">
-            <span class="title-icon">|</span>
-            <span>入园须知</span>
-          </div>
-          <div class="destine">
-            <div class="destine-time">景区开发时间：</div>
-            <div class="destine-out">
-              <p class="destine-desc" v-html="destine.openTiem"></p>
-            </div>
-          </div>
-        </div>
-        <div class="item-detail">
-          <div class="item-header">
-            <span class="title-icon">|</span>
-            <span>使用说明</span>
-          </div>
-          <div class="destine">
-            <div class="destine-out">
-              <p class="destine-desc line">
-                夏各庄路口南太务收费站左转即可到达金海湖。
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="item-detail">
-          <div class="item-header">
-            <span class="title-icon">|</span>
-            <span>退款说明</span>
-          </div>
-          <div class="destine">
-            <div class="destine-time">预定时间：</div>
-            <div class="destine-out">
-              <div class="destine-mp">
-                <span class="destine-content">随时退</span>
+            <div class="destine">
+              <div class="destine-time">有 效 期：</div>
+              <div class="destine-out">
+                <p class="destine-desc">{{destine.validityPeriod}}</p>
               </div>
-              <p class="destine-desc" v-html="destine.explanation"></p>
             </div>
           </div>
-          <div class="destine">
-            <div class="destine-time">极速处理：</div>
-            <div class="destine-out">
-              <p class="destine-desc">{{destine.rapidProcessing}}</p>
+          <div class="item-detail">
+            <div class="item-header">
+              <span class="title-icon">|</span>
+              <span>入园须知</span>
+            </div>
+            <div class="destine">
+              <div class="destine-time">景区开发时间：</div>
+              <div class="destine-out">
+                <p class="destine-desc" v-html="destine.openTiem"></p>
+              </div>
+            </div>
+          </div>
+          <div class="item-detail">
+            <div class="item-header">
+              <span class="title-icon">|</span>
+              <span>使用说明</span>
+            </div>
+            <div class="destine">
+              <div class="destine-out">
+                <p class="destine-desc line">
+                  夏各庄路口南太务收费站左转即可到达金海湖。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item-detail">
+            <div class="item-header">
+              <span class="title-icon">|</span>
+              <span>退款说明</span>
+            </div>
+            <div class="destine">
+              <div class="destine-time">预定时间：</div>
+              <div class="destine-out">
+                <div class="destine-mp">
+                  <span class="destine-content">随时退</span>
+                </div>
+                <p class="destine-desc" v-html="destine.explanation"></p>
+              </div>
+            </div>
+            <div class="destine">
+              <div class="destine-time">极速处理：</div>
+              <div class="destine-out">
+                <p class="destine-desc">{{destine.rapidProcessing}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="item-detail">
+            <div class="item-header">
+              <span class="title-icon">|</span>
+              <span>费用说明</span>
+            </div>
+            <div class="destine">
+              <div class="destine-out">
+                <p class="destine-desc line" v-html="destine.expenseDescription"></p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="item-detail">
-          <div class="item-header">
-            <span class="title-icon">|</span>
-            <span>费用说明</span>
+        <div class="pay">
+          <div class="linePay">
+            在线支付<span class="unit">¥<span class="price">83</span></span>
           </div>
-          <div class="destine">
-            <div class="destine-out">
-              <p class="destine-desc line" v-html="destine.expenseDescription"></p>
+          <div class="chat border-left">
+            <div>
+              <span class="iconfont">&#xe7dc;</span>
+              咨询
             </div>
           </div>
+          <div class="now">立即预定</div>
         </div>
       </div>
-      <div class="pay">
-        <div class="linePay">
-          在线支付<span class="unit">¥<span class="price">83</span></span>
-        </div>
-        <div class="chat border-left">
-          <div>
-            <span class="iconfont">&#xe7dc;</span>
-            咨询
-          </div>
-        </div>
-        <div class="now">立即预定</div>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 <script>
 export default{
   name: 'ItemDetail',
   props: {
-    destine: Object
+    destine: Object,
+    detailShow: Boolean
   },
   data () {
     return {
@@ -113,7 +116,15 @@ export default{
   methods: {
     handlerClose () {
       this.$emit('detailClose')
+    },
+    beforeEnter () {
+      console.log("beforeEnter")
     }
+  },
+  mounted () {
+    console.log("before")
+    let height = this.$refs.out.offsetHeight
+    console.log(height)
   }
 }
 </script>
@@ -130,6 +141,7 @@ export default{
       bottom: 0
       z-index: 20
       background: #ffffff
+      overflow: hidden
       .item
         padding: 0 .7rem 0 .3rem
         line-height: 1.5rem
@@ -220,4 +232,13 @@ export default{
       background: #ff9800
       color: #ffffff
       font-size: .4rem
+  .v-enter,.v-leave-to
+    animation: inside .8s reverse
+  .v-leave,.v-enter-to
+    animation: inside .8s
+  @keyframes inside
+    from
+      height: 0
+    to
+      height: 12.5rem
 </style>
